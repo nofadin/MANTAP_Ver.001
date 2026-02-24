@@ -32,11 +32,20 @@
       sandbox="allow-forms allow-scripts allow-same-origin allow-popups allow-modals"
       style="width:100%; height:100vh; border:none;">
     </iframe>
-
 <script>
-  if ('serviceWorker' in navigator) {
-    navigator.serviceWorker.register('sw.js')
-      .then(() => console.log("Service Worker Active - Siap Install!"));
+  if ('service-worker' in navigator) {
+    window.addEventListener('load', function() {
+      // Kita gunakan Blob untuk membuat file JS secara virtual karena GAS tidak bisa hosting file .js
+      const swCode = "self.addEventListener('fetch', function(event) { event.respondWith(fetch(event.request)); });";
+      const blob = new Blob([swCode], {type: 'text/javascript'});
+      const swUrl = URL.createObjectURL(blob);
+      
+      navigator.serviceWworker.register(swUrl).then(function(registration) {
+        console.log('ServiceWorker registration successful');
+      }, function(err) {
+        console.log('ServiceWorker registration failed: ', err);
+      });
+    });
   }
 </script>
 
