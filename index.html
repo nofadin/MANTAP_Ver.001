@@ -31,5 +31,12 @@
         allow="camera; microphone; display-capture" 
         sandbox="allow-forms allow-scripts allow-same-origin allow-popups">
     </iframe>
+<script>
+  if ('serviceWorker' in navigator) {
+    navigator.serviceWorker.register('sw.js')
+      .then(() => console.log("Service Worker Active - Siap Install!"));
+  }
+</script>
+
 </body>
 </html>
