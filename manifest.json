@@ -1,7 +1,7 @@
 {
   "name": "Maintenance APP - KSC",
   "short_name": "MANTAP-KSC",
-  "start_url": "/MANTAP_Ver.001/",
+  "start_url": "/MANTAP_Ver.001/index.html",
   "scope": "/MANTAP_Ver.001/",
   "display": "standalone",
   "background_color": "#ffffff",
@@ -10,12 +10,20 @@
     {
       "src": "https://lh3.googleusercontent.com/d/1reLEUrANH4em3FClvwAhH59rLN1rx9xl=s192",
       "sizes": "192x192",
-      "type": "image/png"
+      "type": "image/png",
+      "purpose": "any"
     },
     {
       "src": "https://lh3.googleusercontent.com/d/1QtvGb-tHqeGuvCEUi39cGLgdLAuVrfpP=s256",
       "sizes": "256x256",
-      "type": "image/png"
+      "type": "image/png",
+      "purpose": "maskable"
+    },
+    {
+      "src": "https://lh3.googleusercontent.com/d/1QtvGb-tHqeGuvCEUi39cGLgdLAuVrfpP=s512",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "anye"
     }
   ]
 }
